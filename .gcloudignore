@@ -1,0 +1,10 @@
+.git/
+.env
+.venv/
+.backups/
+.runs/
+.ruff_cache/
+__pycache__/
+docs/
+tools/
+*.zip

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" preserveAspectRatio="none"><title>paper</title><rect width="600" height="400" fill="#F1F2FC"/><rect x="205" y="83" width="176" height="245" rx="14" fill="#DDE1F7"/>
+<path d="M226 72h120l42 42v202a12 12 0 0 1-12 12H226a12 12 0 0 1-12-12V84a12 12 0 0 1 12-12Z" fill="white" stroke="#4D55A5" stroke-width="5"/>
+<path d="M346 74v40h40" fill="#DDE1F7" stroke="#4D55A5" stroke-width="5" stroke-linejoin="round"/>
+<path d="M240 111h70M240 132h88M240 151h42m16 0h44" stroke="#4D55A5" stroke-width="6" stroke-linecap="round"/>
+<rect x="239" y="176" width="122" height="85" rx="8" fill="#F1F2FC"/>
+<path d="M253 190v57h95" fill="none" stroke="#4D55A5" stroke-width="4" stroke-linecap="round"/>
+<rect x="268" y="225" width="15" height="21" rx="2" fill="#DDE1F7"/><rect x="291" y="211" width="15" height="35" rx="2" fill="#4D55A5" opacity=".55"/><rect x="314" y="193" width="15" height="53" rx="2" fill="#4D55A5"/>
+<path d="M240 284h48m15 0h48M240 301h48m15 0h48" stroke="#4D55A5" stroke-width="4" stroke-linecap="round" opacity=".6"/></svg>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Chapter Recognition | EAA</title></head><body>
+<div id="galleryContainer">
+
+<h1 class="headlinetitles">Chapter Recognition</h1>
+<div class="description"><hr>
+<h2>This page is a premium content area exclusively for EAA members!</h2>
+<p>If you do not currently have an EAA.org account, register by clicking the button below. Once you are logged in as a member, you will be able to view this page.</p>
+<p> </p></div>
+<div class="small-12 cell">
+    <div class="grid-x grid-padding-x">
+        <div class="small-12 medium-6 cell" style="text-align: center; vertical-align: middle;">
+            <p><a type="button" href="#" class="blueWhiteButton" data-toggle="loginModal">Log In or Register for an EAA.org Account</a></p>
+        </div>
+        <div class="small-12 medium-6 cell" style="text-align: center; vertical-align: middle;">
+            <p><a href="/shop/Membership/Join.aspx" class="blueWhiteButton">Join Today!</a></p>
+        </div>
+    <div class="reveal" id="loginModal" data-reveal="" data-close-on-esc="true" data-close-on-click="true" style="background-color: transparent; border: none; outline: none;">
+    <div class="align-center" style="max-width: 275px; padding: 14px; margin: auto; background-color: white;">
+        <div class="small-12 cell">
+            <span style="font-size: 18px;">Sign In</span>
+            <button data-close="" aria-label="Close reveal" type="button" style="position: absolute; top: auto; margin-left: 30%;">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="small-12 cell formInputCell">
+            <input type="text" id="LoginUsername" class="formInput fullWidth" placeholder="Username" onkeyup="checkIfEnter(event)">
+        </div>
+        <div class="small-12 cell formInputCell">
+            <input type="password" id="LoginPassword" class="formInput fullWidth" placeholder="Password" onkeyup="checkIfEnter(event)">
+        </div>
+        <div class="small-12 cell">
+            <input type="button" id="QuickLoginBtn" class="orangeButton fullWidth" onclick="attemptQuickLogin()" value="Sign In">
+        </div>
+        <div class="h-line"></div>
+        <div>
+            <div class="small-12 medium-6 cell" style="text-align: center; vertical-align: middle;">
+                <p><a href="https://www.eaa.org/eaa/Account/AccountRegisterLanding">Create an EAA.org Account</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript">
+    function checkIfEnter(event) {
+        //REFACTOR: Move to more central location. Util file?
+        var key = event.charCode || event.keyCode || event.which || 0;
+        if (key === 13 /* Enter */)
+            attemptQuickLogin();
+    };
+
+    function attemptQuickLogin() {
+        if (!$('#QuickLoginBtn').prop('disabled')) {
+            AccountUtils.quickLogin(jQuery('#LoginUsername').val(), jQuery('#LoginPassword').val(), false, "EAA_QuickLogin", window);
+            $("#QuickLoginBtn").attr("disabled", "disabled");
+            $("#QuickLoginBtn").val("Please Wait...");
+        }
+    }
+</script>
+
+
+</div>
+</div>
+<script defer type="text/template" data-template="galleryList">
+    <div class="galleryItem cell">
+        <div class="content">
+            <a href="${Link_Item_URL}" target="${LinkTo.Target}">
+                <h3>${Gallery_Title}</h3>
+            </a>
+            <div class="desc">
+                ${Gallery_Description}
+            </div>
+        </div>
+    </div>
+</script>    </div>
+
+
+</body></html>

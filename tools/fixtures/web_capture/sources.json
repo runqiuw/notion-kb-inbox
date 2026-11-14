@@ -1,0 +1,26 @@
+[
+  {
+    "file": "eaa-member-gate.html",
+    "url": "https://www.eaa.org/eaa/eaa-chapters/eaa-chapter-resources/managing-your-chapter/chapter-recognition",
+    "captured_date": "2026-09-30",
+    "status": 200,
+    "fragment_xpath": "//*[@id=\"galleryContainer\"]",
+    "response_sha256": "19403b3ddd151a9c69247f8b915217631977b2add65e53a88395257a70b7d3c3"
+  },
+  {
+    "file": "alpha-login-gate.html",
+    "url": "https://www.alphaetarho.org/auth/login?message=You+must+be+a+member+to+view+this+page.+Login+below+to+access+this+content.",
+    "captured_date": "2026-09-30",
+    "status": 200,
+    "fragment_xpath": "//*[@id=\"main\"]",
+    "response_sha256": "8a1c4cd0a9c8c9be355d351d420b3243f1fe8a8b01adfe7cd5c9ada4532e075e"
+  },
+  {
+    "file": "sivers-short-article.html",
+    "url": "https://sive.rs/slow",
+    "captured_date": "2026-09-30",
+    "status": 200,
+    "fragment_xpath": "//article",
+    "response_sha256": "cba286dd39f931a567410bed44ff046dd0a6f9dfcc1c64ca453cd4eda9b5f623"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "xiaohongshu": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/xiaohongshu.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#FF2442"
+  },
+  "zhihu": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/zhihu.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#0084FF"
+  },
+  "wechat": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/wechat.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#07C160"
+  },
+  "youtube": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/youtube.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#FF0000"
+  },
+  "bilibili": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/bilibili.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#00A1D6"
+  },
+  "openai": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/openai.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#412991"
+  },
+  "googlegemini": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/googlegemini.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#8E75B2"
+  },
+  "arxiv": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.20.0/icons/arxiv.svg",
+    "license": "CC0-1.0 (Simple Icons); brand trademarks remain their owners",
+    "brand_color": "#B31B1B"
+  }
+}

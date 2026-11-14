@@ -1,0 +1,11 @@
+[
+  {"file": "voyager.html", "url": "https://voyager.minedojo.org/", "captured_date": "2026-11-14"},
+  {"file": "dust3r.html", "url": "https://europe.naverlabs.com/research/publications/dust3r-geometric-3d-vision-made-easy/", "captured_date": "2026-11-14"},
+  {"file": "dust3r-cvf.html", "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html", "captured_date": "2026-11-14"},
+  {"file": "pix2pix.html", "url": "https://phillipi.github.io/pix2pix/", "captured_date": "2026-11-14"},
+  {"file": "taming-transformers.html", "url": "https://compvis.github.io/taming-transformers/", "captured_date": "2026-11-14"},
+  {"file": "1611.07004.json", "url": "https://export.arxiv.org/api/query?id_list=1611.07004", "captured_date": "2026-11-14"},
+  {"file": "2012.09841.json", "url": "https://export.arxiv.org/api/query?id_list=2012.09841", "captured_date": "2026-11-14"},
+  {"file": "llava.html", "url": "https://llava-vl.github.io/", "captured_date": "2026-10-10"},
+  {"file": "llava-arxiv.html", "url": "https://arxiv.org/abs/2304.08485", "captured_date": "2026-10-10"}
+]

@@ -1,0 +1,4 @@
+# Probe-only dependencies; deliberately separate from production requirements.
+youtube-transcript-api==1.2.4
+yt-dlp==2026.8.19
+bilibili-cli==0.6.2
