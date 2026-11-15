@@ -24,7 +24,7 @@ agent 按下面的步骤推进，遇到需要你本人操作的地方（标 🙋
 ## 1. 本地准备
 
 ```bash
-git clone <本仓库> && cd <目录>
+git clone https://github.com/runqiuw/notion-kb-inbox.git && cd notion-kb-inbox
 uv venv .venv && . .venv/bin/activate && uv pip install -r requirements.txt
 python tools/run_regressions.py      # 全部离线，不需要任何密钥
 cp .env.example .env
@@ -38,15 +38,17 @@ cp .env.example .env
 
 1. 🙋 在 notion.so/profile/integrations 建 Internal integration，复制 token 到 `.env` 的 `NOTION_TOKEN`。
 2. 🙋 新建一个空页面，`···` → Connections 加入这个 integration，把页面链接给 agent。
-3. agent 运行：
+3. 二选一：
+   - 🙋 复制 [Notion 模板](https://glacier-beard-e5e.notion.site/4199ba3b598181a0a7ffc286b102e2b5)
+     到该页面下，把两个数据库链接给 agent，agent 从链接里取 32 位 ID（见 setup-notion.md 3A）。
+   - agent 运行脚本（没有视图和按钮，之后可照模板手工补）：
 
-   ```bash
-   set -a && . ./.env && set +a
-   python tools/setup_notion.py --parent <页面链接>
-   ```
+     ```bash
+     set -a && . ./.env && set +a
+     python tools/setup_notion.py --parent <页面链接>
+     ```
 
-   把打印出的 `NOTION_MATERIAL_DB`、`NOTION_THOUGHT_DB` 写进 `.env`。
-4. 🙋（可选，之后再做也行）在 Notion 里建视图和首页布局，参考 [notion-schema.md](docs/notion-schema.md#建议的视图与首页)。
+   把 `NOTION_MATERIAL_DB`、`NOTION_THOUGHT_DB` 写进 `.env`。
 
 ### 2.2 Telegram → [docs/setup-telegram.md](docs/setup-telegram.md)
 

@@ -1,4 +1,4 @@
-# Telegram → Notion 阅读收集 Bot
+# notion-kb-inbox · Notion 知识库收件箱
 
 把 Telegram 当收集入口，把 Notion 当阅读和思考的界面。
 在小红书、知乎、B 站、网页上看到想存的东西，转发给 bot，它会抓正文、读图、用 LLM 写中文概览和要点，
@@ -93,6 +93,8 @@ Telegram ──webhook──► Cloud Run ──► Firestore（先保存，立�
 需要：一个已绑卡的 GCP 项目、一个 Telegram 账号、一个 Notion 账号、一个**支持视觉**的 OpenAI 格式 LLM 端点。
 
 👉 **[DEPLOY.md](DEPLOY.md)**：完整步骤、需要你本人操作的地方、所有可定制项。
+
+Notion 模板：[一键复制](https://glacier-beard-e5e.notion.site/4199ba3b598181a0a7ffc286b102e2b5)（或用 `tools/setup_notion.py` 自动建）
 
 分平台说明：[Notion](docs/setup-notion.md) · [Telegram](docs/setup-telegram.md) · [Google Cloud](docs/setup-gcp.md)
 
