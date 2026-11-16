@@ -39,8 +39,9 @@ cp .env.example .env
 1. 🙋 在 notion.so/profile/integrations 建 Internal integration，复制 token 到 `.env` 的 `NOTION_TOKEN`。
 2. 🙋 新建一个空页面，`···` → Connections 加入这个 integration，把页面链接给 agent。
 3. 二选一：
-   - 🙋 复制 [Notion 模板](https://glacier-beard-e5e.notion.site/4199ba3b598181a0a7ffc286b102e2b5)
+   - 🙋 复制 [Notion 模板](https://glacier-beard-e5e.notion.site/41a9ba3b59818181a170c5e9c94c6bc8)
      到该页面下，把两个数据库链接给 agent，agent 从链接里取 32 位 ID（见 setup-notion.md 3A）。
+     模板里的 📖 Wiki 层是可选的，bot 不依赖它，需要的话部署后照 [wiki-layer.md](docs/wiki-layer.md) 接入 chatbot。
    - agent 运行脚本（没有视图和按钮，之后可照模板手工补）：
 
      ```bash

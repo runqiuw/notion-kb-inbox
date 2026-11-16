@@ -94,7 +94,8 @@ Telegram ──webhook──► Cloud Run ──► Firestore（先保存，立�
 
 👉 **[DEPLOY.md](DEPLOY.md)**：完整步骤、需要你本人操作的地方、所有可定制项。
 
-Notion 模板：[一键复制](https://glacier-beard-e5e.notion.site/4199ba3b598181a0a7ffc286b102e2b5)（或用 `tools/setup_notion.py` 自动建）
+Notion 模板：[一键复制](https://glacier-beard-e5e.notion.site/41a9ba3b59818181a170c5e9c94c6bc8)（或用 `tools/setup_notion.py` 自动建）。
+模板包含两层：🧠 知识库（bot 写入的资料与笔记）和 📖 Wiki（可选，chatbot 按 skill 维护的主题条目，见 [wiki-layer.md](docs/wiki-layer.md)）。
 
 分平台说明：[Notion](docs/setup-notion.md) · [Telegram](docs/setup-telegram.md) · [Google Cloud](docs/setup-gcp.md)
 
@@ -117,6 +118,7 @@ python tools/run_regressions.py
 | [docs/video.md](docs/video.md) | B 站字幕与 YouTube 转写 |
 | [docs/chat-shares.md](docs/chat-shares.md) | ChatGPT / Gemini 分享会话导入 |
 | [docs/chat-capture-skill.md](docs/chat-capture-skill.md) | 在 ChatGPT 等 chatbot 里直接把聊天提炼进知识库（[插件](chatgpt-plugin/)） |
+| [docs/wiki-layer.md](docs/wiki-layer.md) | 知识库之上的 Wiki 层：主题条目、查询与维护 skill（[skill 文本](wiki-skills/)） |
 | [docs/operations.md](docs/operations.md) | 排查、轮换密钥、成本、踩过的坑 |
 | [docs/backup.md](docs/backup.md) | 备份与隔离恢复（可选） |
 

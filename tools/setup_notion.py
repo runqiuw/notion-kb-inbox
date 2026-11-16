@@ -9,6 +9,8 @@ integration（否则 API 会返回 404）。
 属性名与选项逐字对应 docs/notion-schema.md —— 代码按中文属性名写入，改名会导致 400。
 
 API 建不了的部分（视图、首页布局、「记下想法」按钮属性）见 docs/setup-notion.md 手工步骤。
+
+加 --wiki 时，在同一父页面下再建「Wiki」页和「Wiki 条目」「维护记录」两个库（docs/wiki-layer.md）。
 """
 import argparse
 import os
@@ -115,16 +117,63 @@ def build(api: Notion, parent: str, root_title: str) -> tuple[str, str]:
     return material["id"].replace("-", ""), thought["id"].replace("-", "")
 
 
+def one_way(db_id):
+    return {"relation": {"database_id": db_id, "single_property": {}}}
+
+
+def build_wiki(api: Notion, parent: str, material: str, thought: str) -> tuple[str, str]:
+    """Wiki 层（可选）：总索引页 + Wiki 条目 + 维护记录，关联只在 Wiki 一侧。见 docs/wiki-layer.md。"""
+    wiki = api.call("POST", "/pages", {
+        "parent": {"page_id": parent},
+        "properties": {"title": {"title": title("Wiki")}},
+        "icon": {"type": "emoji", "emoji": "📖"},
+        "children": [{"type": "paragraph", "paragraph": {"rich_text": title(
+            "主题总索引：按主题列出每个条目的编号、链接、能回答的问题和检索别名。"
+            "由 chatbot 按 wiki-skills/ 里的维护 skill 更新。")}}],
+    })
+    entries = api.call("POST", "/databases", {
+        "parent": {"page_id": wiki["id"]}, "title": title("Wiki 条目"),
+        "description": title("每条回答一个反复会问的问题；关系指向知识库，只在 Wiki 一侧。"),
+        "properties": {
+            "标题": {"title": {}},
+            "编号": {"rich_text": {}},
+            "一句话说明": {"rich_text": {}},
+            "内容状态": {"select": opts("草稿", "可用", "待修订", "已归档")},
+            "核查状态": {"select": opts("未核查", "部分核查", "已核查")},
+            "最近核查": {"date": {}},
+            "关联资料": one_way(material),
+            "关联笔记": one_way(thought),
+        }})
+    api.call("PATCH", f"/databases/{entries['id']}", {"properties": {
+        "相关 Wiki": one_way(entries["id"]), "合并后指向": one_way(entries["id"])}})
+    log = api.call("POST", "/databases", {
+        "parent": {"page_id": wiki["id"]}, "title": title("维护记录"),
+        "properties": {
+            "标题": {"title": {}},
+            "日期": {"date": {}},
+            "目标条目": one_way(entries["id"]),
+            "结果": {"select": opts("完成", "部分完成", "待处理")},
+        }})
+    return entries["id"].replace("-", ""), log["id"].replace("-", "")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--parent", required=True, help="已加入 integration Connections 的页面 ID 或链接")
     p.add_argument("--title", default="科研阅读与思考", help="新建的根页面标题")
+    p.add_argument("--wiki", action="store_true", help="同时在父页面下建 Wiki 层（见 docs/wiki-layer.md）")
     args = p.parse_args()
     token = os.environ.get("NOTION_TOKEN") or sys.exit("请先设置 NOTION_TOKEN")
-    material, thought = build(Notion(token), page_id(args.parent), args.title)
+    api, parent = Notion(token), page_id(args.parent)
+    material, thought = build(api, parent, args.title)
     print("\n建好了。把下面两行填进 .env：")
     print(f"NOTION_MATERIAL_DB={material}")
     print(f"NOTION_THOUGHT_DB={thought}")
+    if args.wiki:
+        entries, log = build_wiki(api, parent, material, thought)
+        print("\nWiki 层也建好了（skill 页需手工贴入 wiki-skills/ 的内容）。想一起备份就填：")
+        print(f"NOTION_WIKI_DB={entries}")
+        print(f"NOTION_WIKI_LOG_DB={log}")
 
 
 if __name__ == "__main__":
