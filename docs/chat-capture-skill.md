@@ -1,10 +1,16 @@
 # 聊天提炼 skill：让 chatbot 直接写入知识库
 
 除了把 ChatGPT / Gemini 分享链接发给 Telegram bot（见 [chat-shares.md](chat-shares.md)），
-还可以在 ChatGPT 等 chatbot 里**直接**把当前聊天提炼进知识库。[`chatgpt-plugin/`](../chatgpt-plugin/)
-就是作者自用的这个插件，已去掉个人配置。
+还可以在 ChatGPT 等 chatbot 里**直接**把当前聊天提炼进知识库。有两种装法：
 
-在聊天里单独发一句 `@知识库聊天提炼`，chatbot 会：
+- **A. 用模板里的 Notion skill（推荐）**：复制 [Notion 模板](setup-notion.md) 后，「知识库」页下面就有
+  「知识库：聊天提炼」skill 页，里面的数据库链接会自动指向你的副本，**不用填任何 ID**。
+  在 ChatGPT / claude.ai 的自定义指令里加一句「我说『存到知识库』时，按 Notion 页〈该页链接〉的流程保存当前聊天」，
+  或在支持 Notion Skill 的客户端里直接启用它。
+- **B. 用 ChatGPT 插件**：[`chatgpt-plugin/`](../chatgpt-plugin/) 是作者自用的插件形式，提供 `@知识库聊天提炼` 这个提及入口，
+  但需要按下文「配置」手工填 ID。
+
+两种装法规则相同（插件里的 `SKILL.md` 就是同一份流程）。调用后，chatbot 会：
 
 - 读取整场相关讨论，区分你的观点、AI 的建议和尚未验证的说法；
 - 在「全部笔记」查重，同一讨论再次调用时在原页追加补充，不新建、不覆盖手写内容；
@@ -32,7 +38,7 @@ chatgpt-plugin/
     agents/openai.yaml         显示名称和默认提示词
 ```
 
-## 配置：填你自己的 ID
+## 配置：填你自己的 ID（仅 B 插件需要）
 
 `references/notion-space.md` 和 `SKILL.md` 末尾「知识库配置与入口兼容」一节里各有一张同样的表，
 把所有 `<...>` 换成你的值（两处保持一致）：
