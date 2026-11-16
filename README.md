@@ -131,6 +131,8 @@ python tools/run_regressions.py
 - 论文的会议名和引用数常为空（Semantic Scholar 匿名限流）。
 - 微信公众号在服务器上抓不到。
 - Notion 与 Firestore 可能漂移：Firestore 记录丢失而 Notion 页面还在时会重复保存。
+- 公开版的代码与作者线上部署一致，但 DEPLOY.md 尚未在全新 GCP 项目里从零完整走过；遇到卡点欢迎提 issue。
+- `chatgpt-plugin/` 的 ChatGPT 导入步骤按插件文件格式整理，未在 ChatGPT 中实测；推荐用模板自带的 Notion skill。
 
 ## 许可证
 
