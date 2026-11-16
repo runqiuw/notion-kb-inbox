@@ -76,6 +76,13 @@ cp .env.example .env
    Cloud Run 服务、三个 Scheduler 任务，最后注册 Telegram webhook。
    第一次建 Firestore 可能要等几分钟，报 not ready 就重跑。
 
+### 2.5 可选：接入 chatbot（不影响 bot）
+
+复制了模板的话，Notion 里已有三个 skill 页：「知识库：聊天提炼」（写笔记）、「Wiki：查询」（读）、
+「Wiki：维护与覆盖核对」（写 Wiki）。🙋 在 ChatGPT / claude.ai 的 Notion 连接里授权这个模板页面，
+再在自定义指令里点名要用的 skill 页链接即可，细节见 [chat-capture-skill.md](docs/chat-capture-skill.md)、
+[wiki-layer.md](docs/wiki-layer.md)。用脚本建库的话，Wiki 层可用 `setup_notion.py --wiki` 补建。
+
 ## 3. 验收
 
 agent 能自己检查的：

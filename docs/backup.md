@@ -5,7 +5,7 @@
 `app.backup` 导出一个独立 ZIP；`app.restore` 从 ZIP 创建全新的测试资料库和笔记库。
 不调用 LLM，不重新抓原平台，不把原生产页面归档或重建。
 
-- Notion：枚举 Bot 的资料库与笔记库（ID 来自服务配置），以及可选的 `NOTION_LIFE_*`、`NOTION_WIKI_*` 额外库（留空即跳过）；
+- Notion：枚举 Bot 的资料库与笔记库（ID 来自服务配置），以及可选的 `NOTION_LIFE_*`、`NOTION_WIKI_*` 额外库（留空即跳过；Wiki 层见 [wiki-layer.md](wiki-layer.md)）；
   完整分页的正文块及嵌套结构、同步块源与引用、封面和文件属性。
 - 附件：下载 Notion 文件的实际字节，避免临时 URL 过期后无法恢复；同时备份 GCS
   原件桶中的所有对象，包含对象名、generation、MIME 和自定义 metadata。

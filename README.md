@@ -20,6 +20,19 @@ Telegram ──webhook──► Cloud Run ──► Firestore（先保存，立�
 三方分工：**Telegram** 负责收集，**Google Cloud**（Cloud Run + Firestore + Cloud Tasks + GCS）负责可靠处理和归档，
 **Notion** 负责阅读。闲置时缩到零，GCP 每月花费约 $0.5 以内；LLM 用你自己的 OpenAI 格式端点。
 
+### 两层 Notion，两个入口
+
+```
+Telegram ──► bot ──────────────────────────► 🧠 知识库（全部资料 · 全部笔记）
+                                                 ▲            │ 关联（只读）
+ChatGPT / Claude ── 「知识库：聊天提炼」 写笔记 ──┘            ▼
+                └── 「Wiki：查询」 读  ／ 「Wiki：维护」 写 ──► 📖 Wiki（主题条目 · 总索引）
+```
+
+- **知识库**：bot 写入的资料和笔记，也是日常阅读界面。部署 bot 只需要这一层。
+- **Wiki**（可选）：chatbot 按 skill 把知识库综合成主题条目，回答反复会问的问题；只在 Wiki 一侧关联知识库，不改动原始资料。
+- 三个 chatbot skill 都在 Notion 模板里，复制模板后链接自动指向你的副本。见 [wiki-layer.md](docs/wiki-layer.md)、[chat-capture-skill.md](docs/chat-capture-skill.md)。
+
 ## 发什么，得到什么
 
 | 你发的 | 结果 |

@@ -2,6 +2,9 @@
 
 把公开分享链接发给 bot，会在想法与笔记库建一条 `类型=聊天提炼` 的笔记，不建资料页。
 
+也可以不经过 bot，在 chatbot 里直接用「知识库：聊天提炼」skill 保存当前聊天（支持私人会话和 Claude），
+见 [chat-capture-skill.md](chat-capture-skill.md)。两条路写同一个库但不共享去重，同一场聊天只用其中一条。
+
 ## 支持范围
 
 - **ChatGPT**：`chatgpt.com/share/<UUID>`（兼容 `chat.openai.com`）。解码公开 HTML 里的
