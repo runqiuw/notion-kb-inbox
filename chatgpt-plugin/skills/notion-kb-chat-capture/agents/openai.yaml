@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识库聊天提炼"
+  short_description: "将研究与技术聊天整理到知识库，保留关键细节、来源及已有资料关联"
+  default_prompt: "使用 $notion-kb-chat-capture，将本聊天的科研与技术讨论提炼到 Notion 知识库，先查重，再保存或补充原笔记。"

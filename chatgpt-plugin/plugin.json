@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "notion-kb-chat-notes",
+  "version": "1.0.6",
+  "description": "将科研与技术聊天提炼为知识库笔记，单独提及自动执行，保留关键细节、原始对话和来源。",
+  "author": {
+    "name": "Personal"
+  },
+  "extensions": {
+    "com.openai": {
+      "apps": "./.app.json",
+      "interface": {
+        "displayName": "知识库聊天提炼",
+        "shortDescription": "研究与技术聊天自动提炼入库",
+        "longDescription": "单独提及即可将当前研究与技术聊天保存到 Notion 知识库。自动提炼完整相关讨论、查重、关联已有资料、保留原始对话和来源，并读回验收；再次调用时补充原笔记，不覆盖手写内容。",
+        "developerName": "Personal",
+        "category": "Productivity",
+        "defaultPrompt": "请调用 notion-kb-chat-capture，将本聊天中的研究与技术讨论提炼到 Notion 知识库「全部笔记」，自动完成读取、查重、保存或补充、来源保留与读回验收。"
+      }
+    }
+  }
+}
+

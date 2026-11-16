@@ -116,6 +116,7 @@ python tools/run_regressions.py
 | [docs/tags.md](docs/tags.md) | 标签词表与 `/tags` |
 | [docs/video.md](docs/video.md) | B 站字幕与 YouTube 转写 |
 | [docs/chat-shares.md](docs/chat-shares.md) | ChatGPT / Gemini 分享会话导入 |
+| [docs/chat-capture-skill.md](docs/chat-capture-skill.md) | 在 ChatGPT 等 chatbot 里直接把聊天提炼进知识库（[插件](chatgpt-plugin/)） |
 | [docs/operations.md](docs/operations.md) | 排查、轮换密钥、成本、踩过的坑 |
 | [docs/backup.md](docs/backup.md) | 备份与隔离恢复（可选） |
 
